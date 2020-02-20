@@ -26,14 +26,29 @@ export default class Habits extends React.Component {
     addHabit = (habit) => {
         let updatedHabits = [...this.state.habits, habit]
         this.setState({
-            habits : updatedHabits
+            habits : updatedHabits,
+            editing : false
+        });
+    }
+
+    handleClick = () => {
+        this.setState({
+            editing : true
         });
     }
 
     render() {
+        const { editing } = this.state;
+        
         return(
             <div className="habits">
-                <AddHabit addHabit={this.addHabit}/>
+                {(!editing) ? <button 
+                    className="add" 
+                    onClick={this.handleClick}
+                    >add new habit</button>
+                    :
+                
+                <AddHabit addHabit={this.addHabit}/>}
 
             </div>
         )

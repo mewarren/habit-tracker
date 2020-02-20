@@ -17,7 +17,6 @@ export default class AddHabit extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Submitting new Habit!' + this.state.habit);
         this.props.addHabit(this.state.habit);
         this.setState({
             habit : ''

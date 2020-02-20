@@ -1,5 +1,6 @@
 import React from 'react';
 import AddHabit from './addHabit.component';
+import DailyHabit from './dailyHabit.component';
 
 export default class Habits extends React.Component {
     constructor(props) {
@@ -38,16 +39,19 @@ export default class Habits extends React.Component {
     }
 
     render() {
-        const { editing } = this.state;
+        const { editing, habits } = this.state;
         
         return(
             <div className="habits">
+                <ul>
+                    {habits.map( habit=><DailyHabit habit={habit}/>)}
+                </ul>
+                
                 {(!editing) ? <button 
                     className="add" 
                     onClick={this.handleClick}
                     >add new habit</button>
                     :
-                
                 <AddHabit addHabit={this.addHabit}/>}
 
             </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import Habits from './components/habits.component';
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +12,7 @@ function App() {
         </p>
        
       </header>
+      <Habits />
     </div>
   );
 }

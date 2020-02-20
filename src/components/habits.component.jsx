@@ -43,7 +43,7 @@ export default class Habits extends React.Component {
         
         return(
             <div className="habits">
-                <ul>
+                <ul className="dailyHabits">
                     {habits.map( habit=><DailyHabit habit={habit}/>)}
                 </ul>
                 

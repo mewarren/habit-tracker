@@ -12,9 +12,9 @@ export default class DailyHabit extends React.Component {
     render() {
         const { habit } = this.props;
         return(
-            <div className="dailyHabits">
+            <li>
                 <h2>{habit}</h2>
-            </div>
+            </li>
         )
     }
 }

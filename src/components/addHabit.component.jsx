@@ -15,13 +15,22 @@ export default class AddHabit extends React.Component {
         });
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Submitting new Habit!' + this.state.habit);
+        this.props.addHabit(this.state.habit);
+        this.setState({
+            habit : ''
+        });
+    }
+
     render() {
         const { habit } = this.state;
         
         return(
-            <form className="addHabit">
+            <form className="addHabit" onSubmit={this.handleSubmit}>
                 <input onChange={this.handleChange} value={habit}/>
-                <button>Add</button>
+                <button type="submit">Add</button>
             </form>
         );
     }

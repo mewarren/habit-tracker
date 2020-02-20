@@ -23,10 +23,17 @@ export default class Habits extends React.Component {
 
     // saveToLocal("michael" , this.state.habits);
 
+    addHabit = (habit) => {
+        let updatedHabits = [...this.state.habits, habit]
+        this.setState({
+            habits : updatedHabits
+        });
+    }
+
     render() {
         return(
             <div className="habits">
-                <AddHabit />
+                <AddHabit addHabit={this.addHabit}/>
 
             </div>
         )

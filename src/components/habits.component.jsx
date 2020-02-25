@@ -30,15 +30,15 @@ export default class Habits extends React.Component {
             { 
                 name : habit,
                 id : habitId, 
-                day: [
-                    { name: 'm', checked: false }, 
-                    { name: 't', checked: false },
-                    { name: 'w', checked: false },
-                    { name: 'th', checked: false }, 
-                    { name: 'f', checked: false },
-                    { name: 's', checked: false },
-                    { name: 'su', checked: false }                   
-                ]
+                // day: [
+                //     { name: 0, checked: true }, 
+                //     { name: 1, checked: false },
+                //     { name: 2, checked: false },
+                //     { name: 3, checked: false }, 
+                //     { name: 4, checked: false },
+                //     { name: 5, checked: false },
+                //     { name: 6, checked: false }                   
+                // ]
             }
         ];
         this.setState({
@@ -47,15 +47,16 @@ export default class Habits extends React.Component {
         });
     }
 
-    checkDay = (key, day) => {
-        this.setState(prevState => ({
-            habits : prevState.habits
-                .map( el => el.id === key ? {
-                    ...el, day: {...el, day: !false}
-                } : el )
+    // checkDay = (key, name) => {
+    //     const habit = {...this.state.habits};
+    //     this.setState(prevState => ({
+    //         habits : prevState.habits
+    //             .map( el => el.name === name ? {
+    //                 ...el, day : [name].checked: !false 
+    //              } : el )
 
-        }))
-    }
+    //     }))
+    // }
 
     handleClick = () => {
         this.setState({

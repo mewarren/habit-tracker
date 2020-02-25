@@ -6,25 +6,43 @@ export default class DailyHabit extends React.Component {
         super(props);
 
         this.state = {
-
+            day : [
+                { checked : false, name : 'monday' }, 
+                { checked : false, name : 'tuesday' },
+                { checked : false, name : 'wednesday' },
+                { checked : false, name : 'thursday' }, 
+                { checked : false, name : 'friday' },
+                { checked : false, name : 'saturday' },
+                { checked: false, name : 'sunday' }                   
+            ]
         };
     }
 
-   handleChange = (e) => {
-       const name = e.target.name;
-       console.log(name);
-
+   handleChange = (event) => {
+        const n = event.target.name;
+        const isChecked = this.state.day.find(({ name }) => name === n);
         
+        this.setState(prevState => ({ 
+            day : prevState.day.map(el => el.name === n ?
+                { ...el, checked : !isChecked.checked} : el )     
+       }));        
     }
 
     render() {
         const { habit } = this.props;
+        const { day } = this.state;
         return(
             <li>
                 <h2>{habit.name}</h2>
                 <fieldset className="checkboxes">
                     {
-                        habit.day.map((box, key) => <Checkbox key={key} name={box.name} checked={box.checked} onChange={this.handleChange}/>)
+                        day.map((box, key) => 
+                            <Checkbox 
+                                key={key} 
+                                name={box.name} 
+                                checked={box.checked} 
+                                onChange={this.handleChange}
+                            />)
                     }
                 </fieldset>
             </li>

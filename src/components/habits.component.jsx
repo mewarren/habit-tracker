@@ -2,6 +2,8 @@ import React from 'react';
 import AddHabit from './addHabit.component';
 import DailyHabit from './dailyHabit.component';
 
+import './styles/habits.style.scss';
+
 export default class Habits extends React.Component {
     constructor(props) {
         super(props);
@@ -80,7 +82,7 @@ export default class Habits extends React.Component {
                 </ul>
                 
                 {(!editing) ? <button 
-                    className="add" 
+                    className="add-button" 
                     onClick={this.handleClick}
                     >add new habit</button>
                     :

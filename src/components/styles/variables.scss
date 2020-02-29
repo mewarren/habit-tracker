@@ -1,6 +1,13 @@
-$base-light: #EFFFE9;
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400&display=swap);
+
+$base-light: #e7f9f8;
+$input-light: #f4fcfc;
 $med-green: #2EC4B6;
-$base-dark: #155952;
+$med-one: #2bb6a9;
+$med-two: #28a89c;
+$base-dark: #0a2d2a;
 $base-red: #E71D36;
 
-$lato: 'Lato', 400 ;
+$sans-serif: 'Lato';
+$light: 300;
+$reg: 400;

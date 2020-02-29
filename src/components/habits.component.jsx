@@ -84,7 +84,7 @@ export default class Habits extends React.Component {
                 {(!editing) ? <button 
                     className="add-button" 
                     onClick={this.handleClick}
-                    >add new habit</button>
+                    >add habit</button>
                     :
                 <AddHabit addHabit={this.addHabit}/>}
 

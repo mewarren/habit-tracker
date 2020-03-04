@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/addHabit.styles.scss';
 
 export default class AddHabit extends React.Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class AddHabit extends React.Component {
         
         return(
             <form className="addHabit" onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} value={habit}/>
+                <input onChange={this.handleChange} value={habit} placeholder="New Habit"/>
                 <button type="submit">Add</button>
             </form>
         );
